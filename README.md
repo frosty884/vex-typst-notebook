@@ -9,8 +9,9 @@ To use this template, you'll need to have Typst installed on your device. You ca
 Once you have Typst installed, follow these steps to use the VEX Robotics notebook template:
 
 1. Clone or download this repository to your device.
-2. Open Typst and create a new notebook.
-3. In the notebook settings, select "Import Template" and choose the VEX Robotics template file from this repository.
+2. Open folder in Visual Studio Code.
+3. Use two side by side windows, one with main.typ or template.typ, and one with main.pdf
+4. Save main.typ, and main.pdf will automatically compile with any updates made.
 
 That's it! You can now start using the VEX Robotics notebook template in Typst.
 
