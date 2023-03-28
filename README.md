@@ -4,7 +4,7 @@ This repository contains an open source VEX Robotics notebook template for use w
 
 ## Getting Started
 
-To use this template, you'll need to have Typst installed on your device. You can download Typst from their [website](https://typst.app/) or install the [Typst LSP extension](https://marketplace.visualstudio.com/items?itemName=typst.typst-lsp) for Visual Studio Code.
+To use this template, you'll need to have Typst installed on your device. You can use Typst from their [website](https://typst.app/) or install the [Typst LSP extension](https://marketplace.visualstudio.com/items?itemName=typst.typst-lsp) for Visual Studio Code.
 
 Once you have Typst installed, follow these steps to use the VEX Robotics notebook template:
 
