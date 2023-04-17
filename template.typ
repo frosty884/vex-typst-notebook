@@ -1,22 +1,15 @@
-// The project function defines how your document looks.
-// It takes your content and some metadata and formats it.
-// Go ahead and customize it to your liking!
-#let project(title: "", authors: (), organization: "", location: "", header: none, body) = {
-  // Set the document's basic properties.
-  set document(author: authors, title: title)
-  set page(paper: "us-letter", numbering: "1", number-align: right)
+#let notebook(title: "", authors: (), organization: "", location: "", header: none, body) = {
+  set document(author: authors, title: title) // PDF metadata
+  set page(paper:"a4")
 
-  // Save heading and body font families in variables.
+  // Font setup
   let body-font = "New Computer Modern"
   let sans-font = "NewCMSans"
-
-  // Set body font family.
   set text(font: body-font, lang: "en")
   show math.equation: set text(weight: 400)
   show heading: set text(font: sans-font)
 
-  // Title page.
-  // The page can contain a header if you pass one with `header: "header.png"`.
+  // Title page (flagged for reconstruction)
   move(dy:-100pt)[
     #if header != none {
         align(center, image(header, width: 650pt, height: 400pt))
@@ -35,29 +28,49 @@
         )
         ]
     ]
-)
-
-  //
+  )
   pad(
     top: -6em,
     right: 20%,
     text(font: body-font, 1em, organization)
   )  
-  
   pad(
     top: -0.5em,
     right: 20%,
     text(font: body-font, 1em, location),
-  )  
-
+  )
   v(1fr)
   pagebreak()
 
-  
-
+  // Blank page
   pagebreak()
 
-  // Main body.
+  // Table of contents
+  table(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  [], [], [],
+  [], [], [],
+  [], [], []
+  )
+  pagebreak()
+
+  // Blank page
+  pagebreak()
+
+  // Main body
+  set page(numbering: "1", footer: locate(loc => {
+      let i = counter(page).at(loc).first() // Get page number
+      if calc.even(i) {
+        return align(left,[#i])
+      }
+      if calc.odd(i) {
+        return align(right,[#i])
+      }
+      
+    }))
+  counter(page).update(1)
   set par(justify: true)
 
   body

@@ -1,10 +1,8 @@
 #import "template.typ": *
 
-// Take a look at the file `template.typ` in the file panel
-// to customize this template and discover how it works.
-#show: project.with(
+#show: notebook.with(
   title: "Engineering Notebook 2023-2024",
-  authors: "Brandon Lis, John Doe, Jane Doe",
+  authors: "John Doe, Jane Doe",
   organization: "Illinois Institute of Technology",
   location: "Chicago, Illinois",
   header: "header.jpg",
@@ -13,6 +11,24 @@
 // We generated the example code below so you can see how
 // your document will look. Go ahead and replace it with
 // your own content!
+#table(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  [], [*Area*], [*Parameters*],
+  [],
+  $ pi h (D^2 - d^2) / 4 $,
+  [
+    $h$: height \
+    $D$: outer radius \
+    $d$: inner radius
+  ],
+  [],
+  $ sqrt(2) / 12 a^3 $,
+  [$a$: edge length]
+)
+
+#counter(heading).display()
 
 = Introduction
 #lorem(60)
@@ -24,4 +40,4 @@
 #lorem(40)
 
 = Related Work
-#lorem(500)
+#lorem(1400)
